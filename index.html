@@ -39,16 +39,15 @@
 
         .container { max-width: 800px; margin: 15px auto; padding: 0 12px; }
 
-        /* Navigation Menu Buttons */
-        .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; margin-bottom: 15px; }
+        /* Main Navigation */
+        .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; margin-bottom: 15px; }
         .nav-btn {
             background: #ffffff; border: 2px solid #cbd5e1; border-radius: 12px;
-            padding: 10px 8px; font-size: 13.5px; font-weight: bold; color: #334155;
+            padding: 10px 6px; font-size: 13px; font-weight: bold; color: #334155;
             cursor: pointer; transition: all 0.2s; text-align: center;
         }
         .nav-btn.active { background: var(--primary); color: white; border-color: var(--primary-dark); box-shadow: 0 4px 10px rgba(79,70,229,0.3); }
 
-        /* Content Sections */
         .content-panel { display: none; }
         .content-panel.active { display: block; }
 
@@ -58,17 +57,16 @@
         }
         .card-title {
             font-size: 17px; font-weight: 700; color: var(--primary);
-            margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+            margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;
         }
 
-        /* Sub-topic Buttons */
+        /* Sub Navigation */
         .sub-nav { display: flex; gap: 6px; margin-bottom: 14px; flex-wrap: wrap; }
         .sub-btn {
             background: #f1f5f9; border: 1.5px solid #cbd5e1; border-radius: 8px;
             padding: 6px 12px; font-size: 12.5px; font-weight: bold; color: #475569; cursor: pointer;
         }
         .sub-btn.active { background: #0284c7; color: white; border-color: #0369a1; }
-
         .sub-content { display: none; }
         .sub-content.active { display: block; }
 
@@ -89,31 +87,40 @@
             padding: 6px 2px; border-radius: 6px; font-size: 12px; font-weight: bold; cursor: pointer;
         }
         .finger-btn.active { background: #4f46e5; color: white; border-color: #312e81; }
-        .sim-result { background: white; border-radius: 8px; padding: 10px; font-size: 14px; font-weight: bold; border: 1px solid #cbd5e1; margin-top: 8px; }
+        .sim-result { background: white; border-radius: 8px; padding: 10px; font-size: 13.5px; font-weight: bold; border: 1px solid #cbd5e1; margin-top: 8px; }
 
-        /* Practice Grid */
-        .questions-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 8px; }
+        /* Practice Exercise Grids */
+        .questions-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 8px; margin: 12px 0; }
         .q-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 8px; }
         .q-row { display: flex; align-items: center; justify-content: space-between; }
-        .q-input { width: 65px; padding: 4px; font-size: 15px; font-weight: bold; text-align: center; border: 1.5px solid #cbd5e1; border-radius: 4px; }
+        .q-input { width: 70px; padding: 5px; font-size: 15px; font-weight: bold; text-align: center; border: 1.5px solid #cbd5e1; border-radius: 5px; }
         .q-card.correct { background: #f0fdf4; border-color: #86efac; }
         .q-card.wrong { background: #fef2f2; border-color: #fca5a5; }
 
+        .btn-action {
+            background: #0284c7; color: white; border: none; padding: 7px 12px;
+            border-radius: 6px; font-weight: bold; font-size: 13px; cursor: pointer;
+        }
+        .btn-check-all {
+            background: #16a34a; color: white; border: none; padding: 11px;
+            border-radius: 8px; font-size: 15px; font-weight: bold; cursor: pointer; width: 100%;
+        }
+
         /* Game UI */
-        .game-box { text-align: center; padding: 15px; }
+        .game-box { text-align: center; padding: 10px; }
+        .game-settings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px; text-align: left; }
         .game-timer-bar { width: 100%; height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; margin-bottom: 12px; }
         .game-timer-fill { width: 100%; height: 100%; background: #ef4444; transition: width 0.1s linear; }
-        .game-q { font-size: 32px; font-weight: 900; color: #1e1b4b; margin: 15px 0; }
-        .game-choices { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .game-q { font-size: 32px; font-weight: 900; color: #1e1b4b; margin: 12px 0; }
+        .game-choices { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
         .choice-btn {
-            background: #ffffff; border: 2px solid #818cf8; font-size: 22px; font-weight: bold;
-            padding: 12px; border-radius: 10px; cursor: pointer; transition: all 0.15s;
+            background: #ffffff; border: 2px solid #818cf8; font-size: 20px; font-weight: bold;
+            padding: 12px; border-radius: 10px; cursor: pointer;
         }
-        .choice-btn:active { background: #4f46e5; color: white; }
 
-        /* Print Settings */
-        .print-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
-        .print-input { width: 100%; padding: 8px; border: 1.5px solid #cbd5e1; border-radius: 6px; font-size: 14px; }
+        /* PDF Inputs */
+        .pdf-inputs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; margin-bottom: 12px; }
+        .input-box { width: 100%; padding: 7px; border: 1.5px solid #cbd5e1; border-radius: 6px; font-size: 13.5px; }
 
         /* Lock Screen Modal */
         #lock-screen {
@@ -136,7 +143,7 @@
         .unlock-box { background: #f1f5f9; padding: 12px; border-radius: 8px; border: 1px dashed #94a3b8; }
         .btn-unlock { background: var(--primary); color: white; width: 100%; padding: 9px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
 
-        /* Print Watermark & Media Styles */
+        /* Print Media Styles */
         @media print {
             body * { visibility: hidden; }
             #printable-area, #printable-area * { visibility: visible; }
@@ -150,7 +157,7 @@
                 text-transform: uppercase; letter-spacing: 6px; white-space: nowrap; z-index: -1;
             }
             .paper-head { border-bottom: 2px solid #000; padding-bottom: 8px; margin-bottom: 15px; }
-            .paper-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; font-size: 15px; }
+            .paper-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 14.5px; }
             .paper-footer { position: absolute; bottom: 15px; left: 30px; right: 30px; text-align: center; font-size: 10px; border-top: 1px solid #aaa; padding-top: 4px; }
         }
     </style>
@@ -171,11 +178,12 @@
     </div>
 
     <div class="container">
-        <!-- Main Navigation Tabs -->
+        <!-- Navigation Buttons -->
         <div class="nav-grid">
-            <button class="nav-btn active" onclick="switchTab('tab-mult')">🖐️ ඇඟිලි ගුණ කිරීම</button>
-            <button class="nav-btn" onclick="switchTab('tab-sub')">➖ අඩු කිරීමේ ක්‍රම</button>
-            <button class="nav-btn" onclick="switchTab('tab-div')">➗ බෙදීමේ ක්‍රම</button>
+            <button class="nav-btn active" onclick="switchTab('tab-mult')">✖️ ගුණ කිරීම (6–10)</button>
+            <button class="nav-btn" onclick="switchTab('tab-add')">➕ එකතු කිරීම</button>
+            <button class="nav-btn" onclick="switchTab('tab-sub')">➖ අඩු කිරීම</button>
+            <button class="nav-btn" onclick="switchTab('tab-div')">➗ බෙදීම</button>
             <button class="nav-btn" onclick="switchTab('tab-game')">🎮 Math Game</button>
             <button class="nav-btn" onclick="switchTab('tab-pdf')">📄 PDF පේපර්</button>
         </div>
@@ -183,15 +191,15 @@
         <!-- 1. MULTIPLICATION PANEL -->
         <div id="tab-mult" class="content-panel active">
             <div class="card">
-                <div class="card-title">🖐️ ඇඟිලි ආධාරයෙන් 6 සිට 10 දක්වා ගුණ කිරීම</div>
-                
+                <div class="card-title">
+                    <span>🖐️ ඇඟිලි ආධාරයෙන් 6 සිට 10 දක්වා ගුණ කිරීම</span>
+                </div>
                 <div class="sub-nav">
                     <button class="sub-btn active" onclick="switchSub('mult', 'm-theory')">📖 පාඩම සහ පියවර</button>
                     <button class="sub-btn" onclick="switchSub('mult', 'm-sim')">🖐️ සජීවී සිමියුලේටරය</button>
                     <button class="sub-btn" onclick="switchSub('mult', 'm-quiz')">📝 අභ්‍යාස ගණන් 20</button>
                 </div>
 
-                <!-- Theory Sub-page -->
                 <div id="m-theory" class="sub-content active">
                     <div class="diagram-box">
                         <img src="./Screenshot_20261109_201117%20(1).jpg" alt="Finger Values Diagram" onerror="this.src='Screenshot_20261109_201117 (1).jpg';">
@@ -202,10 +210,9 @@
                     <div class="step-pill"><strong>පියවර 4:</strong> ඉහළින් ඉතිරි වූ ඇඟිලි ගණන් දෙක එකිනෙක ගුණ කර එකතු කරන්න (3 × 2 = 6 👉 50 + 6 = 56).[cite: 1]</div>
                 </div>
 
-                <!-- Simulator Sub-page -->
                 <div id="m-sim" class="sub-content">
                     <div class="sim-box">
-                        <div style="font-size:14px; font-weight:bold; color:#312e81; margin-bottom:6px;">ඇඟිලි ස්පර්ශ කර සාම්පල් හදන්න:</div>
+                        <div style="font-size:13.5px; font-weight:bold; color:#312e81; margin-bottom:6px;">ඇඟිලි ස්පර්ශ කර සාම්පල් හදන්න:</div>
                         <div class="sim-grid">
                             <div class="hand-col">
                                 <span style="font-weight:bold; font-size:12px; color:#3730a3;">👈 වම් අත</span>
@@ -233,85 +240,132 @@
                     </div>
                 </div>
 
-                <!-- Quiz Sub-page -->
                 <div id="m-quiz" class="sub-content">
-                    <button class="sub-btn" style="background:#0284c7; color:white; margin-bottom:10px;" onclick="generateQuestions()">🎲 අලුත් ගණන් 20ක්</button>
-                    <div class="questions-grid" id="q-container"></div>
-                    <button class="nav-btn active" style="width:100%; margin-top:12px; background:#16a34a;" onclick="checkAnswers()">✅ පිළිතුරු පරීක්ෂා කරන්න</button>
-                    <div id="score-result" style="margin-top:10px; font-size:16px; font-weight:bold; text-align:center;"></div>
+                    <button class="btn-action" onclick="generateMultiplicationQuiz()">🎲 අලුත් ගණන් 20ක් ලබාගන්න</button>
+                    <div class="questions-grid" id="q-container-mult"></div>
+                    <button class="btn-check-all" onclick="checkAnswers('mult')">✅ පිළිතුරු පරීක්ෂා කරන්න</button>
+                    <div id="score-mult" style="margin-top:10px; font-size:15px; font-weight:bold; text-align:center;"></div>
                 </div>
             </div>
         </div>
 
-        <!-- 2. SUBTRACTION PANEL -->
+        <!-- 2. ADDITION PANEL -->
+        <div id="tab-add" class="content-panel">
+            <div class="card">
+                <div class="card-title">
+                    <span>➕ එකතු කිරීමේ වේගවත් ක්‍රම</span>
+                    <button class="btn-action" onclick="generateAdditionQuiz()">🎲 අලුත් ගණන් 20ක් ලබාගන්න</button>
+                </div>
+                <div class="step-pill">
+                    <strong>ආසන්න 10 හෝ 100ට ගෙන එකතු කිරීම:</strong><br>
+                    උදා: <strong>48 + 35</strong> 👉 48 ට 2ක් දමා 50 කරගන්න. දැන් 50 + 35 = 85. මුලින් එක් කළ 2 අඩු කරන්න 👉 <strong>83</strong>.
+                </div>
+                <div class="questions-grid" id="q-container-add"></div>
+                <button class="btn-check-all" onclick="checkAnswers('add')">✅ පිළිතුරු පරීක්ෂා කරන්න</button>
+                <div id="score-add" style="margin-top:10px; font-size:15px; font-weight:bold; text-align:center;"></div>
+            </div>
+        </div>
+
+        <!-- 3. SUBTRACTION PANEL -->
         <div id="tab-sub" class="content-panel">
             <div class="card">
-                <div class="card-title">➖ අඩු කිරීමේ වේගවත් ක්‍රම</div>
-                <div class="step-pill">
-                    <strong>ක්‍රමය 1: සියල්ල 9න්, අන්තිම එක 10න් (All from 9, last from 10)</strong><br>
-                    100, 1000, 10000න් අඩු කිරීමේදී ණයට ගැනීමක් අවශ්‍ය නැත.<br>
-                    උදා: <strong>1000 - 357</strong><br>
-                    මුල් ඉලක්කම් 9න් අඩු කරන්න: 9 - 3 = 6, 9 - 5 = 4<br>
-                    අවසාන ඉලක්කම 10න් අඩු කරන්න: 10 - 7 = 3 👉 <strong>පිළිතුර = 643</strong>
+                <div class="card-title">
+                    <span>➖ අඩු කිරීමේ වේගවත් ක්‍රම</span>
+                    <button class="btn-action" onclick="generateSubtractionQuiz()">🎲 අලුත් ගණන් 20ක් ලබාගන්න</button>
                 </div>
                 <div class="step-pill">
-                    <strong>ක්‍රමය 2: ආසන්න 10ට ගෙන අඩු කිරීම</strong><br>
-                    උදා: <strong>74 - 29</strong><br>
-                    29 වෙනුවට 30ක් අඩු කරන්න: 74 - 30 = 44<br>
-                    අප 1ක් වැඩියෙන් අඩු කළ නිසා 1ක් එකතු කරන්න: 44 + 1 👉 <strong>පිළිතුර = 45</strong>
+                    <strong>සියල්ල 9න්, අන්තිම එක 10න් (100, 1000න් අඩු කිරීම):</strong><br>
+                    උදා: <strong>1000 - 468</strong> 👉 9 - 4 = 5, 9 - 6 = 3, 10 - 8 = 2 👉 <strong>පිළිතුර = 532</strong>
                 </div>
+                <div class="questions-grid" id="q-container-sub"></div>
+                <button class="btn-check-all" onclick="checkAnswers('sub')">✅ පිළිතුරු පරීක්ෂා කරන්න</button>
+                <div id="score-sub" style="margin-top:10px; font-size:15px; font-weight:bold; text-align:center;"></div>
             </div>
         </div>
 
-        <!-- 3. DIVISION PANEL -->
+        <!-- 4. DIVISION PANEL -->
         <div id="tab-div" class="content-panel">
             <div class="card">
-                <div class="card-title">➗ බෙදීමේ සරල කෙටි ක්‍රම</div>
+                <div class="card-title">
+                    <span>➗ බෙදීමේ සරල කෙටි ක්‍රම</span>
+                    <button class="btn-action" onclick="generateDivisionQuiz()">🎲 අලුත් ගණන් 20ක් ලබාගන්න</button>
+                </div>
                 <div class="step-pill">
-                    <strong>ක්‍රමය 1: ඕනෑම සංඛ්‍යාවක් 5න් ලේසියෙන්ම බෙදීම</strong><br>
+                    <strong>ඕනෑම සංඛ්‍යාවක් 5න් ලේසියෙන්ම බෙදීම:</strong><br>
                     අදාළ සංඛ්‍යාව 2න් ගුණ කර අග සිට එක් ස්ථානයකට දශම තිත තබන්න.<br>
-                    උදා: <strong>140 ÷ 5</strong> 👉 140 × 2 = 280 👉 තිත තැබූ විට = <strong>28</strong><br>
-                    උදා: <strong>63 ÷ 5</strong> 👉 63 × 2 = 126 👉 තිත තැබූ විට = <strong>12.6</strong>
+                    උදා: <strong>140 ÷ 5</strong> 👉 140 × 2 = 280 👉 තිත තැබූ විට = <strong>28</strong>
                 </div>
-                <div class="step-pill">
-                    <strong>ක්‍රමය 2: සංඛ්‍යාවක් 3න් බෙදෙනවාදැයි බැලූ සැණින් හඳුනාගැනීම</strong><br>
-                    සංඛ්‍යාවේ සියලු ඉලක්කම් එකතු කරන්න. එකතුව 3න් බෙදේ නම් මුළු සංඛ්‍යාවම 3න් බෙදේ.<br>
-                    උදා: <strong>435</strong> 👉 4 + 3 + 5 = 12 (12 තුනෙන් බෙදෙන නිසා 435 තුනෙන් බෙදේ).
-                </div>
+                <div class="questions-grid" id="q-container-div"></div>
+                <button class="btn-check-all" onclick="checkAnswers('div')">✅ පිළිතුරු පරීක්ෂා කරන්න</button>
+                <div id="score-div" style="margin-top:10px; font-size:15px; font-weight:bold; text-align:center;"></div>
             </div>
         </div>
 
-        <!-- 4. SPEED MATH GAME PANEL -->
+        <!-- 5. SPEED MATH GAME PANEL -->
         <div id="tab-game" class="content-panel">
             <div class="card game-box">
                 <div class="card-title" style="justify-content:center;">🎮 Speed Math Challenge</div>
-                <div style="font-size:14px; margin-bottom:8px;">ලකුණු: <span id="game-score" style="font-weight:bold; color:#16a34a;">0</span> | ඉතිරි ජීවිත: <span id="game-lives">❤️❤️❤️</span></div>
+                
+                <div class="game-settings-grid">
+                    <div>
+                        <label style="font-size:12px; font-weight:bold;">ගණිත කර්මය තෝරන්න:</label>
+                        <select id="game-op-select" class="input-box">
+                            <option value="all">සියල්ල මිශ්‍රව (➕, ➖, ✖️, ➗)</option>
+                            <option value="mult">ගුණ කිරීම පමණක් (✖️)</option>
+                            <option value="add">එකතු කිරීම පමණක් (➕)</option>
+                            <option value="sub">අඩු කිරීම පමණක් (➖)</option>
+                            <option value="div">බෙදීම පමණක් (➗)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="font-size:12px; font-weight:bold;">එක් ප්‍රශ්නයකට කාලය (තත්පර):</label>
+                        <input type="number" id="game-manual-timer" class="input-box" value="10" placeholder="0 = කාල සීමාවක් නැත">
+                    </div>
+                </div>
+
+                <div style="font-size:13.5px; margin-bottom:8px;">ලකුණු: <span id="game-score" style="font-weight:bold; color:#16a34a;">0</span> | ජීවිත: <span id="game-lives">❤️❤️❤️</span></div>
                 <div class="game-timer-bar"><div class="game-timer-fill" id="game-bar"></div></div>
-                <div class="game-q" id="game-question">7 × 8 = ?</div>
+                <div class="game-q" id="game-question">සූදානම් වන්න...</div>
                 <div class="game-choices" id="game-choices"></div>
-                <button class="nav-btn active" style="margin-top:15px; width:100%;" onclick="startGame()">▶️ ක්‍රීඩාව ආරම්භ කරන්න</button>
+                <button class="btn-action" style="margin-top:15px; width:100%; padding:10px;" onclick="startGame()">▶️ ක්‍රීඩාව ආරම්භ කරන්න</button>
             </div>
         </div>
 
-        <!-- 5. PDF GENERATOR PANEL -->
+        <!-- 6. PDF GENERATOR PANEL -->
         <div id="tab-pdf" class="content-panel">
             <div class="card">
                 <div class="card-title">📄 විභාග ප්‍රශ්න පත්‍ර (PDF) Generator</div>
-                <div class="print-controls">
+                <div style="font-size:13px; color:#475569; margin-bottom:10px;">එක් එක් කොටසින් අවශ්‍ය ප්‍රශ්න ගණන තෝරන්න:</div>
+                
+                <div class="pdf-inputs-grid">
                     <div>
-                        <label style="font-size:12.5px; font-weight:bold;">ප්‍රශ්න ගණන (20 - 50):</label>
-                        <input type="number" id="pdf-qcount" class="print-input" value="20" min="20" max="50">
+                        <label style="font-size:12px; font-weight:bold;">➕ එකතු කිරීම:</label>
+                        <input type="number" id="pdf-cnt-add" class="input-box" value="5" min="0">
                     </div>
                     <div>
-                        <label style="font-size:12.5px; font-weight:bold;">Paper Type:</label>
-                        <select id="pdf-mode" class="print-input">
-                            <option value="single">තනි පේපර් එකක් (Single Paper)</option>
-                            <option value="multi10">ළමුන් 10 දෙනෙකුට වෙනස් පේපර් 10ක් (Sets A-J)</option>
-                        </select>
+                        <label style="font-size:12px; font-weight:bold;">➖ අඩු කිරීම:</label>
+                        <input type="number" id="pdf-cnt-sub" class="input-box" value="5" min="0">
+                    </div>
+                    <div>
+                        <label style="font-size:12px; font-weight:bold;">✖️ ගුණ කිරීම:</label>
+                        <input type="number" id="pdf-cnt-mult" class="input-box" value="5" min="0">
+                    </div>
+                    <div>
+                        <label style="font-size:12px; font-weight:bold;">➗ බෙදීම:</label>
+                        <input type="number" id="pdf-cnt-div" class="input-box" value="5" min="0">
                     </div>
                 </div>
-                <button class="nav-btn active" style="width:100%; background:#0284c7;" onclick="prepareAndPrintPDF()">
-                    🖨️ PDF පේපර් සකස් කර බාගත කරන්න (Print / Save PDF)
+
+                <div style="margin-bottom:14px;">
+                    <label style="font-size:12px; font-weight:bold;">ප්‍රශ්න පත්‍ර වර්ගය:</label>
+                    <select id="pdf-mode" class="input-box">
+                        <option value="single">තනි ප්‍රශ්න පත්‍රයක් (Single Paper)</option>
+                        <option value="multi10">ළමුන් 10 දෙනෙකුට වෙනස් පේපර් 10ක් (Sets A-J)</option>
+                    </select>
+                </div>
+
+                <button class="btn-action" style="width:100%; padding:12px; font-size:15px;" onclick="prepareAndPrintPDF()">
+                    🖨️ ප්‍රශ්න පත්‍රය (PDF) බාගත කරන්න / මුද්‍රණය කරන්න
                 </button>
             </div>
         </div>
@@ -364,7 +418,7 @@
             event.target.classList.add('active');
         }
 
-        // Finger Simulator Logic
+        // Finger Simulator
         let selL = 7, selR = 8;
         function selectFinger(hand, val) {
             if (hand === 'L') selL = val;
@@ -389,40 +443,80 @@
             `;
         }
 
-        // Exercises Logic
-        let currentQuestions = [];
-        function generateQuestions() {
-            const container = document.getElementById('q-container');
-            container.innerHTML = '';
-            currentQuestions = [];
-            document.getElementById('score-result').innerHTML = '';
+        // Quiz Generators for 4 Operations
+        const quizData = { mult: [], add: [], sub: [], div: [] };
 
+        function generateMultiplicationQuiz() {
+            const container = document.getElementById('q-container-mult');
+            container.innerHTML = ''; quizData.mult = [];
+            document.getElementById('score-mult').innerHTML = '';
             for (let i = 1; i <= 20; i++) {
                 const a = Math.floor(Math.random() * 5) + 6;
                 const b = Math.floor(Math.random() * 5) + 6;
-                currentQuestions.push({ num1: a, num2: b, ans: a * b });
-
-                const qCard = document.createElement('div');
-                qCard.className = 'q-card';
-                qCard.id = `qc-${i}`;
-                qCard.innerHTML = `
-                    <div class="q-row">
-                        <span style="font-weight:bold; font-size:15px;">${i}) &nbsp; ${a} × ${b} =</span>
-                        <input type="number" class="q-input" id="ans-${i}">
-                        <span id="badge-${i}"></span>
-                    </div>
-                `;
-                container.appendChild(qCard);
+                quizData.mult.push({ a, b, ans: a * b });
+                container.appendChild(createQuestionCard('mult', i, `${a} × ${b} =`));
             }
         }
 
-        function checkAnswers() {
+        function generateAdditionQuiz() {
+            const container = document.getElementById('q-container-add');
+            container.innerHTML = ''; quizData.add = [];
+            document.getElementById('score-add').innerHTML = '';
+            for (let i = 1; i <= 20; i++) {
+                const a = Math.floor(Math.random() * 50) + 15;
+                const b = Math.floor(Math.random() * 45) + 12;
+                quizData.add.push({ a, b, ans: a + b });
+                container.appendChild(createQuestionCard('add', i, `${a} + ${b} =`));
+            }
+        }
+
+        function generateSubtractionQuiz() {
+            const container = document.getElementById('q-container-sub');
+            container.innerHTML = ''; quizData.sub = [];
+            document.getElementById('score-sub').innerHTML = '';
+            for (let i = 1; i <= 20; i++) {
+                const a = Math.floor(Math.random() * 60) + 40;
+                const b = Math.floor(Math.random() * 35) + 10;
+                quizData.sub.push({ a, b, ans: a - b });
+                container.appendChild(createQuestionCard('sub', i, `${a} - ${b} =`));
+            }
+        }
+
+        function generateDivisionQuiz() {
+            const container = document.getElementById('q-container-div');
+            container.innerHTML = ''; quizData.div = [];
+            document.getElementById('score-div').innerHTML = '';
+            for (let i = 1; i <= 20; i++) {
+                const b = Math.floor(Math.random() * 8) + 2;
+                const ans = Math.floor(Math.random() * 12) + 2;
+                const a = b * ans;
+                quizData.div.push({ a, b, ans });
+                container.appendChild(createQuestionCard('div', i, `${a} ÷ ${b} =`));
+            }
+        }
+
+        function createQuestionCard(type, index, text) {
+            const card = document.createElement('div');
+            card.className = 'q-card';
+            card.id = `qc-${type}-${index}`;
+            card.innerHTML = `
+                <div class="q-row">
+                    <span style="font-weight:bold; font-size:14.5px;">${index}) &nbsp; ${text}</span>
+                    <input type="number" class="q-input" id="ans-${type}-${index}">
+                    <span id="badge-${type}-${index}"></span>
+                </div>
+            `;
+            return card;
+        }
+
+        function checkAnswers(type) {
             let score = 0;
-            currentQuestions.forEach((q, idx) => {
+            const items = quizData[type];
+            items.forEach((q, idx) => {
                 const i = idx + 1;
-                const input = document.getElementById(`ans-${i}`);
-                const card = document.getElementById(`qc-${i}`);
-                const badge = document.getElementById(`badge-${i}`);
+                const input = document.getElementById(`ans-${type}-${i}`);
+                const card = document.getElementById(`qc-${type}-${i}`);
+                const badge = document.getElementById(`badge-${type}-${i}`);
                 const val = parseInt(input.value.trim());
 
                 if (val === q.ans) {
@@ -434,12 +528,12 @@
                     badge.innerHTML = `❌(${q.ans})`;
                 }
             });
-            const res = document.getElementById('score-result');
+            const res = document.getElementById(`score-${type}`);
             res.innerHTML = `ඔබේ ලකුණු: 20 න් ${score} කි! ` + (score >= 15 ? '🌟 විශිෂ්ටයි!' : '💪 තව උත්සාහ කරන්න!');
             res.style.color = score >= 15 ? '#16a34a' : '#d97706';
         }
 
-        // Speed Math Game Logic
+        // Speed Math Game with Manual Timer
         let gameScore = 0, gameLives = 3, gameTimer, currentCorrectAns = 0;
         function startGame() {
             gameScore = 0; gameLives = 3;
@@ -450,20 +544,48 @@
 
         function nextGameRound() {
             if (gameLives <= 0) {
-                alert(`Game Over! ඔබේ ලකුණු ගණන: ${gameScore}`);
+                alert(`Game Over! ඔබේ මුළු ලකුණු ගණන: ${gameScore}`);
                 return;
             }
-            const a = Math.floor(Math.random() * 5) + 6;
-            const b = Math.floor(Math.random() * 5) + 6;
-            currentCorrectAns = a * b;
-            document.getElementById('game-question').textContent = `${a} × ${b} = ?`;
 
-            // 4 Choices
+            const opSelect = document.getElementById('game-op-select').value;
+            let op = opSelect;
+            if (opSelect === 'all') {
+                const ops = ['mult', 'add', 'sub', 'div'];
+                op = ops[Math.floor(Math.random() * ops.length)];
+            }
+
+            let a, b, text;
+            if (op === 'mult') {
+                a = Math.floor(Math.random() * 5) + 6;
+                b = Math.floor(Math.random() * 5) + 6;
+                currentCorrectAns = a * b;
+                text = `${a} × ${b}`;
+            } else if (op === 'add') {
+                a = Math.floor(Math.random() * 40) + 10;
+                b = Math.floor(Math.random() * 40) + 10;
+                currentCorrectAns = a + b;
+                text = `${a} + ${b}`;
+            } else if (op === 'sub') {
+                a = Math.floor(Math.random() * 50) + 30;
+                b = Math.floor(Math.random() * 25) + 5;
+                currentCorrectAns = a - b;
+                text = `${a} - ${b}`;
+            } else {
+                b = Math.floor(Math.random() * 8) + 2;
+                currentCorrectAns = Math.floor(Math.random() * 10) + 2;
+                a = b * currentCorrectAns;
+                text = `${a} ÷ ${b}`;
+            }
+
+            document.getElementById('game-question').textContent = `${text} = ?`;
+
             const choices = new Set([currentCorrectAns]);
             while (choices.size < 4) {
-                choices.add((Math.floor(Math.random() * 5) + 6) * (Math.floor(Math.random() * 5) + 6));
+                choices.add(currentCorrectAns + Math.floor(Math.random() * 13) - 6);
             }
-            const shuffled = Array.from(choices).sort(() => Math.random() - 0.5);
+            const shuffled = Array.from(choices).filter(c => c >= 0).sort(() => Math.random() - 0.5);
+
             const container = document.getElementById('game-choices');
             container.innerHTML = '';
             shuffled.forEach(c => {
@@ -474,20 +596,27 @@
                 container.appendChild(btn);
             });
 
-            // Timer bar (10s)
+            // Manual Timer Logic
             clearInterval(gameTimer);
-            let width = 100;
+            const manualSeconds = parseInt(document.getElementById('game-manual-timer').value) || 0;
             const fill = document.getElementById('game-bar');
-            gameTimer = setInterval(() => {
-                width -= 1;
-                fill.style.width = width + '%';
-                if (width <= 0) {
-                    clearInterval(gameTimer);
-                    gameLives--;
-                    updateLivesUI();
-                    nextGameRound();
-                }
-            }, 100);
+
+            if (manualSeconds > 0) {
+                let timeLeft = manualSeconds * 10;
+                const total = timeLeft;
+                gameTimer = setInterval(() => {
+                    timeLeft--;
+                    fill.style.width = (timeLeft / total * 100) + '%';
+                    if (timeLeft <= 0) {
+                        clearInterval(gameTimer);
+                        gameLives--;
+                        updateLivesUI();
+                        nextGameRound();
+                    }
+                }, 100);
+            } else {
+                fill.style.width = '100%';
+            }
         }
 
         function submitGameAns(ans) {
@@ -508,11 +637,12 @@
             document.getElementById('game-lives').textContent = h || '💔';
         }
 
-        // PDF Generation with Watermark and Dynamic Questions
+        // PDF Generator with Customized Operation Counts
         function prepareAndPrintPDF() {
-            let count = parseInt(document.getElementById('pdf-qcount').value) || 20;
-            if (count < 20) count = 20;
-            if (count > 50) count = 50;
+            const cntAdd = parseInt(document.getElementById('pdf-cnt-add').value) || 0;
+            const cntSub = parseInt(document.getElementById('pdf-cnt-sub').value) || 0;
+            const cntMult = parseInt(document.getElementById('pdf-cnt-mult').value) || 0;
+            const cntDiv = parseInt(document.getElementById('pdf-cnt-div').value) || 0;
 
             const mode = document.getElementById('pdf-mode').value;
             const studentName = localStorage.getItem('nb_reg_name') || '...........................................';
@@ -527,11 +657,32 @@
                 const page = document.createElement('div');
                 page.className = 'print-page';
 
+                let qIndex = 1;
                 let questionsHtml = '';
-                for (let q = 1; q <= count; q++) {
+
+                // Add Addition questions
+                for (let i = 0; i < cntAdd; i++, qIndex++) {
+                    const a = Math.floor(Math.random() * 50) + 15;
+                    const b = Math.floor(Math.random() * 45) + 10;
+                    questionsHtml += `<div><strong>${qIndex})</strong> &nbsp; ${a} + ${b} = &nbsp; ________</div>`;
+                }
+                // Add Subtraction questions
+                for (let i = 0; i < cntSub; i++, qIndex++) {
+                    const a = Math.floor(Math.random() * 60) + 40;
+                    const b = Math.floor(Math.random() * 30) + 10;
+                    questionsHtml += `<div><strong>${qIndex})</strong> &nbsp; ${a} - ${b} = &nbsp; ________</div>`;
+                }
+                // Add Multiplication questions
+                for (let i = 0; i < cntMult; i++, qIndex++) {
                     const a = Math.floor(Math.random() * 5) + 6;
                     const b = Math.floor(Math.random() * 5) + 6;
-                    questionsHtml += `<div><strong>${q})</strong> &nbsp; ${a} × ${b} = &nbsp; ________</div>`;
+                    questionsHtml += `<div><strong>${qIndex})</strong> &nbsp; ${a} × ${b} = &nbsp; ________</div>`;
+                }
+                // Add Division questions
+                for (let i = 0; i < cntDiv; i++, qIndex++) {
+                    const b = Math.floor(Math.random() * 8) + 2;
+                    const ans = Math.floor(Math.random() * 10) + 2;
+                    questionsHtml += `<div><strong>${qIndex})</strong> &nbsp; ${b * ans} ÷ ${b} = &nbsp; ________</div>`;
                 }
 
                 page.innerHTML = `
@@ -548,7 +699,7 @@
                                 <td style="text-align:right;"><strong>දිනය:</strong> 2026 / ____ / ____</td>
                             </tr>
                             <tr>
-                                <td><strong>පාඩම:</strong> 6 සිට 10 දක්වා ගුණ කිරීම</td>
+                                <td><strong>සැකසුම:</strong> නෙත්මි භාග්‍යා</td>
                                 <td style="text-align:right;"><strong>ලකුණු:</strong> ______ / 100</td>
                             </tr>
                         </table>
@@ -564,19 +715,20 @@
             window.print();
         }
 
-        // 2-Minute Lock & WhatsApp System
+        // ================= 2-MINUTE LOCK & ACTIVATION SYSTEM =================
         const ADMIN_PHONE = "94784693750";
         const lockScreen = document.getElementById('lock-screen');
         const timerDisp = document.getElementById('timer-display');
 
         const isActivated = localStorage.getItem('nb_math_activated');
+
         if (isActivated === 'true') {
             timerDisp.textContent = "සක්‍රියයි ✔";
             timerDisp.parentElement.style.background = "rgba(34, 197, 94, 0.25)";
             timerDisp.parentElement.style.borderColor = "#22c55e";
             timerDisp.parentElement.style.color = "#86efac";
         } else {
-            // 2 Minutes (120 seconds)
+            // Strict 2 Minutes (120 seconds) for all devices
             let timeLeft = 2 * 60;
             const trialInterval = setInterval(() => {
                 timeLeft--;
@@ -631,7 +783,11 @@
             }
         }
 
-        generateQuestions();
+        // Initialize Quizzes
+        generateMultiplicationQuiz();
+        generateAdditionQuiz();
+        generateSubtractionQuiz();
+        generateDivisionQuiz();
     </script>
 </body>
 </html>
